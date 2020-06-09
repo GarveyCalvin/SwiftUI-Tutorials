@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        UNUserNotificationCenter.current().delegate = self
         return true
     }
 
@@ -33,3 +33,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 }
 
+// MARK: UNUserNotificationCenterDelegate
+extension AppDelegate: UNUserNotificationCenterDelegate {
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+//        clearBadge()
+        guard let trigger = notification.request.trigger else { return; }
+        receiveNotification(flag: "willPresent", trigger: trigger)
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+//        clearBadge()
+        guard let trigger = response.notification.request.trigger else { return; }
+        receiveNotification(flag: "did receive", trigger: trigger)
+    }
+    
+    func receiveNotification(flag: String, trigger: UNNotificationTrigger) {
+        if trigger.isKind(of: UNTimeIntervalNotificationTrigger.classForCoder()) {
+            print("Notification \(flag), Is class UNTimeIntervalNotificationTrigger")
+        } else if trigger.isKind(of: UNCalendarNotificationTrigger.classForCoder()) {
+            print("Notification \(flag), Is class UNCalendarNotificationTrigger")
+        }
+    }
+    
+    func clearBadge() {
+        UIApplication.shared.applicationIconBadgeNumber = 0
+    }
+}

@@ -34,7 +34,7 @@ struct GCCalendarView: View {
                     content.body = "公众号 gh_6a83a7c19315"
                     content.badge = 1
                     
-                    let dateComponents =  Calendar.current.dateComponents([.hour, .minute, .second], from: self.date)
+                    let dateComponents =  Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: self.date)
                     let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: self.isEveryDay)
                     let request = UNNotificationRequest(identifier: "Notification", content: content, trigger: trigger)
                     UNUserNotificationCenter.current().add(request) { err in
