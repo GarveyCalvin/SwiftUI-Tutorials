@@ -35,7 +35,8 @@ struct GCCalendarView: View {
                     content.badge = 1
                     
                     let dateComponents =  Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: self.date)
-                    let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: self.isEveryDay)
+//                    let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: self.isEveryDay)
+                    let trigger = UNCalendarNotificationTrigger(dateMatching: DateComponents(second: 5), repeats: true)
                     let request = UNNotificationRequest(identifier: "Notification", content: content, trigger: trigger)
                     UNUserNotificationCenter.current().add(request) { err in
                         err != nil ? print("添加本地通知错误", err!.localizedDescription) : print("添加本地通知成功")
