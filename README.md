@@ -15,4 +15,4 @@ SwiftUI 教程 - 本人会不定期更新，如果此项目帮助到了你，请
 
 如需加群讨论，请加我 QQ ，统一拉群，期待你们的加入！
 
-<img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gi7q2ewwdgj30u01hdgpy.jpg" style="zoom:25%;" />
+![](https://tva1.sinaimg.cn/large/007S8ZIlgy1gi7qh40m7ij30bq0kvq4a.jpg)
