@@ -9,17 +9,19 @@
 import SwiftUI
 
 struct ContentView: View {
-    init() {
-        UITableView.appearance().separatorStyle = .none
-    }
+    private let bgColor = Color(uiColor: UIColor(red: 245.0 / 255.0, green: 245.0 / 255.0, blue: 245.0 / 255.0, alpha: 1))
     
     var body: some View {
         List {
             ForEach(0 ..< 20) { item in
                 GCMainRow()
-                    .listRowInsets(EdgeInsets())
+                    .listRowInsets(EdgeInsets()) //
+                    .listRowSeparator(.hidden) // iOS15新增的API,隐藏默认分隔线
+                    .listRowBackground(bgColor) // 设置每行的背景颜色
             }
         }
+        .listStyle(PlainListStyle())
+        .background(bgColor) // 同时也需要设置背景颜色，不然上边和下边会漏出来
     }
 }
 
@@ -30,6 +32,9 @@ struct ContentView_Previews: PreviewProvider {
 }
 
 struct GCMainRow: View {
+    init() {
+        print("aaaaaa", self)
+    }
     var body: some View {
         HStack(alignment: .top) {
             Image("1")

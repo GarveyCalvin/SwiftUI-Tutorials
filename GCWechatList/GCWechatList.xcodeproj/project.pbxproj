@@ -286,8 +286,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"GCWechatList/Preview Content\"";
+				DEVELOPMENT_TEAM = 4APFNNH2X9;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = GCWechatList/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -305,8 +307,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"GCWechatList/Preview Content\"";
+				DEVELOPMENT_TEAM = 4APFNNH2X9;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = GCWechatList/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
